@@ -10,6 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#totalCard").innerHTML = generateCard();
   });
 
+  document.querySelector("#setWidth").addEventListener("input", function() {
+    let widthValue = this.value;
+    let newWidth = document.querySelector("#totalCard");
+    newWidth.style.width = widthValue + "px";
+  });
+
+  document.querySelector("#setHeight").addEventListener("input", function() {
+    let heightValue = this.value;
+    let newHeight = document.querySelector("#totalCard");
+    newHeight.style.height = heightValue + "px";
+  });
+
   document.querySelector("#totalCard").innerHTML = generateCard();
 });
 
@@ -39,4 +51,7 @@ const generateCard = () => {
       <p class="cardTypeBottom" style="color: ${cardTopColor}">${allType}</p>
     </div>
   `;
+
+  let newHeight = document.querySelector("#setWidth");
+  newWidth.style.height = this.value + px;
 };
