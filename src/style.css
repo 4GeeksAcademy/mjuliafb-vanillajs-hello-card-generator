@@ -30,7 +30,7 @@ body {
   color: black;
 }
 .cardTop {
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
 .cardCenter {
@@ -39,7 +39,8 @@ body {
 
 .cardBottom {
   justify-content: flex-end;
-  padding-right: 25px;
+  padding-right: 15px;
+  transform: rotateX(180deg);
 }
 
 p {
