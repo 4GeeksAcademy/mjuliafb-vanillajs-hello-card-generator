@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let widthValue = this.value;
     let newWidth = document.querySelector("#totalCard");
 
-    if (widthValue == "0") {
+    if (widthValue === "") {
       newWidth.style.width = "200px"; // Restaurar el tamaño por defecto
     } else {
       newWidth.style.width = widthValue + "px";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("#setHeight").addEventListener("input", function() {
     let heightValue = this.value;
     let newHeight = document.querySelector("#totalCard");
-    if (heightValue == "0") {
+    if (heightValue === "") {
       newHeight.style.height = "300px"; // Restaurar el tamaño por defecto
     } else {
       newHeight.style.height = heightValue + "px";
