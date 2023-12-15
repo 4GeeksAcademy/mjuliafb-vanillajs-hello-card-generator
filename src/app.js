@@ -7,7 +7,7 @@ import "./assets/img/4geeks.ico";
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("button").addEventListener("click", function() {
-    document.querySelector("#totalCard").innerHTML = generateCard();
+    generateCard();
   });
 
   document.querySelector("#setWidth").addEventListener("input", function() {
@@ -31,33 +31,52 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  document.querySelector("#totalCard").innerHTML = generateCard();
+  generateCard();
+
+  let autoUpload = setInterval(generateCard, 10000);
 });
 
 const generateCard = () => {
   function type() {
     let cardType = ["♣️", "♦️", "♥️", "♠️"];
     let cardIndex = Math.floor(Math.random() * cardType.length);
-    return cardType[cardIndex];
+    let selectedType = cardType[cardIndex];
+
+    if (selectedType === "♥️" || selectedType === "♦️") {
+      document.querySelector(".cardTypeUp").style.color = "red";
+      document.querySelector(".cardTypeBottom").style.color = "red";
+    } else if (selectedType === "♣️" || selectedType === "♠️") {
+      document.querySelector(".cardTypeUp").style.color = "black";
+      document.querySelector(".cardTypeBottom").style.color = "black";
+    }
+    return selectedType;
   }
 
   function number() {
-    let numberIndex = Math.floor(Math.random() * 9) + 2;
-    return numberIndex;
+    let numberType = [
+      "A",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "J",
+      "Q",
+      "K"
+    ];
+    let cardIn = Math.floor(Math.random() * numberType.length);
+    return numberType[cardIn];
   }
 
-  let allType = type();
-  let cardTopColor = allType === "♥️" ? "red" : "black";
+  let newCardTypeUp = document.querySelector(".cardTypeUp");
+  newCardTypeUp.innerHTML = type();
 
-  return `
-    <div class="cardTop">
-      <p class="cardTypeUp" style="color: ${cardTopColor}">${allType}</p>
-    </div>
-    <div class="cardCenter">
-      <p class="cardNumber">${number()}</p>
-    </div>
-    <div class="cardBottom">
-      <p class="cardTypeBottom" style="color: ${cardTopColor}">${allType}</p>
-    </div>
-  `;
+  let newCardTypeBottom = document.querySelector(".cardTypeBottom");
+  newCardTypeBottom.innerHTML = newCardTypeUp.innerHTML;
+
+  let newCardNumber = document.querySelector(".cardNumber");
+  newCardNumber.innerHTML = number();
 };
