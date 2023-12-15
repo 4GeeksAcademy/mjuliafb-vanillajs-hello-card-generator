@@ -1,1 +1,49 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: darkgreen;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura al 100% del viewport */
+}
+
+.totalCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea cardTop a la izquierda */
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  background-color: gray;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.cardTop,
+.cardCenter,
+.cardBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cardCenter {
+  flex: 1; /* Hace que cardCenter ocupe el espacio restante */
+}
+
+.cardBottom {
+  align-items: flex-end; /* Alinea cardBottom a la derecha */
+}
+
+p {
+  font-size: 60px;
+}
+
+button {
+  margin-top: 5 px;
+}
