@@ -11,33 +11,37 @@ body {
   height: 100vh; /* Ajusta la altura al 100% del viewport */
 }
 
-.totalCard {
+#totalCard {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea cardTop a la izquierda */
-  justify-content: center;
-  height: 400px;
-  width: 300px;
-  background-color: gray;
+  justify-content: space-between;
+  height: 300px;
+  width: 200px;
+  background-color: whitesmoke;
   margin-bottom: 15px;
   margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
 }
-
 .cardTop,
 .cardCenter,
 .cardBottom {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
+  color: black;
+}
+.cardTop {
+  padding-left: 25px;
 }
 
 .cardCenter {
-  flex: 1; /* Hace que cardCenter ocupe el espacio restante */
+  justify-content: center;
 }
 
 .cardBottom {
-  align-items: flex-end; /* Alinea cardBottom a la derecha */
+  justify-content: flex-end;
+  padding-right: 25px;
 }
 
 p {
@@ -45,5 +49,15 @@ p {
 }
 
 button {
-  margin-top: 5 px;
+  background-color: black;
+  color: whitesmoke;
+}
+.title {
+  background-color: red;
+  align-items: center;
+  padding: 2px;
+}
+
+h1 {
+  color: whitesmoke;
 }
